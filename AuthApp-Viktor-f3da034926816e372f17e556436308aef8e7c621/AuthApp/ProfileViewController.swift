@@ -26,9 +26,20 @@ class ProfileViewController: UIViewController {
         myImageView.image = image
 
     }
+    
     @IBAction func changeInfoTapped(_ sender: Any) {
+        print("123")
+        performSegue(withIdentifier: "myUnwindSegue", sender: nil)
+        
     }
     
     @IBAction func shareButtonTapped(_ sender: UIButton) {
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    
 }

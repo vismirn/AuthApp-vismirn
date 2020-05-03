@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -99,6 +99,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="rLP-q1-rd7"/>
                     <connections>
                         <outlet property="emailTextField" destination="EfB-Wv-XYG" id="ez6-3J-7Af"/>
                         <outlet property="firstnameTextField" destination="h2A-j9-yb8" id="d98-4P-qZO"/>
@@ -116,19 +117,19 @@
         <!--Profile View Controller-->
         <scene sceneID="ZR6-yM-fOa">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="M2b-Qj-2GV" customClass="ProfileViewController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M2b-Qj-2GV" customClass="ProfileViewController" customModule="AuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ScX-OF-Zv0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш профиль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vt7-WN-xjZ">
-                                <rect key="frame" x="125" y="94" width="164" height="32.5"/>
+                                <rect key="frame" x="125" y="50" width="164" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5s-cp-CcJ">
-                                <rect key="frame" x="78.5" y="790" width="257" height="22"/>
+                                <rect key="frame" x="78.5" y="736" width="257" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title=" Поделиться изображением" image="square.and.arrow.up" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,7 +139,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PWl-Q3-VF5">
-                                <rect key="frame" x="30" y="176.5" width="354" height="170"/>
+                                <rect key="frame" x="30" y="132.5" width="354" height="170"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4H8-AM-qdH">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="100"/>
@@ -200,14 +201,16 @@
                         <outlet property="firstnameTextField" destination="Ix0-RN-Aa2" id="1kR-3a-GdB"/>
                         <outlet property="lastNameTextField" destination="thH-jS-e6L" id="qMr-8l-X4L"/>
                         <outlet property="myImageView" destination="CEg-uH-jIg" id="zxb-JJ-wR0"/>
+                        <segue destination="E0p-FZ-kpY" kind="unwind" identifier="myUnwindSegue" unwindAction="unwindSegueWithSegue:" id="O5F-lr-HuL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAX-1o-pw8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="E0p-FZ-kpY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="910" y="137"/>
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>
