@@ -33,8 +33,24 @@ class ProfileViewController: UIViewController {
         passwordTextField.text = password
         
     }
-
+// поделиться
     @IBAction func shareButtonTapped(_ sender: UIButton) {
+        
+        let items = ["1. Молоко\n2. Кефир"]
+        
+        guard let image = myImageView.image else { return }
+        
+        let shareController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+//для ipad
+        shareController.popoverPresentationController?.sourceView = sender
+//проверка успешности доставки
+        shareController.completionWithItemsHandler = { _, bool, _, _ in
+            if bool {
+                print("It is done!")
+            }
+        }
+//"показать"
+        present(shareController, animated: true, completion: nil)
     }
     @IBAction func changeInfoTapped(_ sender: Any) {
     }

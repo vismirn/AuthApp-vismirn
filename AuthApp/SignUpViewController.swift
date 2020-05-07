@@ -39,6 +39,13 @@ class SignUpViewController: UIViewController {
     }
     
     
+    @IBAction func registrTapped(_ sender: Any) {
+        let mainTabBap = MainTabBarController()
+        mainTabBap.modalPresentationStyle = .fullScreen
+        
+        present(mainTabBap, animated: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         guard let destinationVC = segue.destination as? ProfileViewController else { return }
