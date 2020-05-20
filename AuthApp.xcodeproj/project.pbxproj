@@ -11,6 +11,8 @@
 		BB945FF82463F78700707295 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB945FF72463F78700707295 /* SearchViewController.swift */; };
 		BB94604A2467F38C00707295 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9460492467F38C00707295 /* SearchResponse.swift */; };
 		BB946072246E7F8900707295 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB946071246E7F8900707295 /* TestViewController.swift */; };
+		BBBAD2A7247599E30096BD3D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBAD2A6247599E30096BD3D /* NetworkService.swift */; };
+		BBBAD2A92475A21D0096BD3D /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBAD2A82475A21D0096BD3D /* NetworkDataFetcher.swift */; };
 		F072403E24594FCE00937E8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072403D24594FCE00937E8F /* AppDelegate.swift */; };
 		F072404024594FCE00937E8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F072403F24594FCE00937E8F /* SceneDelegate.swift */; };
 		F072404524594FCE00937E8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F072404324594FCE00937E8F /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		BB945FF72463F78700707295 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BB9460492467F38C00707295 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		BB946071246E7F8900707295 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		BBBAD2A6247599E30096BD3D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		BBBAD2A82475A21D0096BD3D /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		F072403A24594FCE00937E8F /* AuthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F072403D24594FCE00937E8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F072403F24594FCE00937E8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BBBAD2AA2475A25D0096BD3D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BBBAD2A6247599E30096BD3D /* NetworkService.swift */,
+				BBBAD2A82475A21D0096BD3D /* NetworkDataFetcher.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BBBAD2AB2475A2840096BD3D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0724051245950A300937E8F /* SignUpViewController.swift */,
+				BB945FF52463F71700707295 /* MainTabBarController.swift */,
+				BB945FF72463F78700707295 /* SearchViewController.swift */,
+				F0724053245950B100937E8F /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BBBAD2AC2475A2A10096BD3D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB9460492467F38C00707295 /* SearchResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F072403124594FCE00937E8F = {
 			isa = PBXGroup;
 			children = (
@@ -68,11 +100,9 @@
 			children = (
 				F072403D24594FCE00937E8F /* AppDelegate.swift */,
 				F072403F24594FCE00937E8F /* SceneDelegate.swift */,
-				F0724051245950A300937E8F /* SignUpViewController.swift */,
-				BB945FF52463F71700707295 /* MainTabBarController.swift */,
-				BB945FF72463F78700707295 /* SearchViewController.swift */,
-				BB9460492467F38C00707295 /* SearchResponse.swift */,
-				F0724053245950B100937E8F /* ProfileViewController.swift */,
+				BBBAD2AA2475A25D0096BD3D /* Services */,
+				BBBAD2AC2475A2A10096BD3D /* Models */,
+				BBBAD2AB2475A2840096BD3D /* Controllers */,
 				F072404324594FCE00937E8F /* Main.storyboard */,
 				BB946071246E7F8900707295 /* TestViewController.swift */,
 				F072404624594FD100937E8F /* Assets.xcassets */,
@@ -157,6 +187,8 @@
 				BB945FF82463F78700707295 /* SearchViewController.swift in Sources */,
 				BB946072246E7F8900707295 /* TestViewController.swift in Sources */,
 				F072403E24594FCE00937E8F /* AppDelegate.swift in Sources */,
+				BBBAD2A92475A21D0096BD3D /* NetworkDataFetcher.swift in Sources */,
+				BBBAD2A7247599E30096BD3D /* NetworkService.swift in Sources */,
 				F0724054245950B100937E8F /* ProfileViewController.swift in Sources */,
 				BB945FF62463F71700707295 /* MainTabBarController.swift in Sources */,
 				F0724052245950A300937E8F /* SignUpViewController.swift in Sources */,
