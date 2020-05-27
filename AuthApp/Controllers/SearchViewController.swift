@@ -16,6 +16,7 @@ class SearchViewController: UIViewController {
     let networkDataFetch = NetworkDataFetcher()
     var myTracks: SearchResponse? = nil
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +39,8 @@ extension SearchViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MYcell")
+//        tableView.register(UITableViewCell, forCellReuseIdentifier: "MYcell")
+        tableView.register(UINib(nibName: "TrackCell", bundle: nil), forCellReuseIdentifier: TrackCell.reuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         searchController.searchBar.delegate = self
     }
@@ -68,11 +70,30 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MYcell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: TrackCell.reuseIdentifier, for: indexPath) as! TrackCell
         let track = myTracks?.results[indexPath.row]
-        cell.textLabel?.text = track?.trackName
+        
+        cell.setup(track: track)
+        
         return cell
+        
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 84
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        let track = myTracks?.results[indexPath.row]
+        let trackVC = TrackViewController()
+        
+        present(trackVC, animated: true, completion: nil)
+        
+    }
+
+    
+
 }
 
 
@@ -84,7 +105,7 @@ extension SearchViewController: UISearchBarDelegate {
         //Тут мы будем делать сетевой запрос по URL строке
         //        print(searchText)
         
-        let urlString = "https://itunes.apple.com/search?term=\(searchText)&limit=10"
+        let urlString = "https://itunes.apple.com/search?term=\(searchText)&limit=10&media=music"
         
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (_) in
