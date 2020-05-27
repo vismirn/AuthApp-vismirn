@@ -85,9 +85,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
-        let track = myTracks?.results[indexPath.row]
+        guard let track = myTracks?.results[indexPath.row] else { return }
         let trackVC = TrackViewController()
         
+        trackVC.setup(pickedTrack: track)
         present(trackVC, animated: true, completion: nil)
         
     }
