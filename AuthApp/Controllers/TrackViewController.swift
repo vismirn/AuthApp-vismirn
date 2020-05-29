@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 import AVKit
 
+
 class TrackViewController: UIViewController {
     
     let dragDownButton = UIButton()
@@ -64,7 +65,32 @@ class TrackViewController: UIViewController {
         player.replaceCurrentItem(with: playerItem)
         player.play()
         
+    }
+    
+    
+//    func tappedDown(startStopButton: Bool?) {
+//        guard let start = startStopButton(bool: startStopButton) else { return }
+//        let playerStart = AVPlayer(start: start)
+//        player.play()
         
+            
+        }
+        
+    }
+    
+    
+    func playSound(_ buttonTag: Int){
+
+        let path = Bundle.main.path(forResource: "note\(buttonTag)", ofType: "wav")!
+        let url = URL(fileURLWithPath: path)
+
+        do{
+            soundEffect = try AVAudioPlayer(contentsOf: url)
+            soundEffect?.play(buttonTag)
+            // to stop the spound .stop()
+        }catch{
+            print ("file could not be loaded or other error!")
+        }
     }
 }
 
@@ -183,3 +209,4 @@ extension TrackViewController {
         ])
     }
 }
+
